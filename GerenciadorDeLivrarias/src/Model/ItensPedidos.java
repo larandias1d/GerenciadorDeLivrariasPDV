@@ -7,6 +7,7 @@ public class ItensPedidos {
 	private int idPedido;
 	private int idLivro;
 	private int quantidade;
+	
 	public int getIdPedido() {
 		return idPedido;
 	}
