@@ -375,8 +375,8 @@ public class TelaCaixa extends JFrame {
 		modeloTableLivrosDaVenda = (DefaultTableModel) tableLivrosDaVenda.getModel();
 		modeloTableLivrosDaVenda.addColumn("ID");
 		modeloTableLivrosDaVenda.addColumn("Título");
-		modeloTableLivrosDaVenda.addColumn("Preço");
 		modeloTableLivrosDaVenda.addColumn("Quantidade");
+		modeloTableLivrosDaVenda.addColumn("Preço");
 		modeloTableLivrosDaVenda.addColumn("Subtotal");				
 		scrollPaneTabelaLivrosDaVenda.setViewportView(tableLivrosDaVenda);
 		
@@ -424,6 +424,7 @@ public class TelaCaixa extends JFrame {
 		btnConcluirVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				int contador = 0;
 				Pedido pedido = new Pedido (); 
 				PedidoDAO pedidoDAO = new PedidoDAO();
 				ClienteFisicoDAO clienteFisicoDAO = new ClienteFisicoDAO();
@@ -445,12 +446,14 @@ public class TelaCaixa extends JFrame {
 				pedido.setIdFuncionario(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite seu código de funcionário")));
 				pedidoDAO.Cadastrar(pedido);
 				
-				for (int contador = 0; contador < modeloTableLivrosDaVenda.getRowCount(); contador++) {
+				System.out.println("\nQuantidade de produtos: " + modeloTableLivrosDaVenda.getRowCount()); 
+				
+				for (contador = 0; contador < modeloTableLivrosDaVenda.getRowCount(); contador++) {
 					ItensPedidos itensPedidos = new ItensPedidos();	
 					itensPedidos.setIdLivro(Integer.parseInt(modeloTableLivrosDaVenda.getValueAt(contador, 0).toString()));
-					System.out.println("\nCodigo pedido:" + pedidoDAO.RetornarIdPedido());
+					System.out.println("\nCodigo pedido:" + pedidoDAO.RetornarIdPedido() + "\nENTROU " + contador + "\n\nCof livro: " + itensPedidos.getIdLivro());
 					itensPedidos.setIdPedido(pedidoDAO.RetornarIdPedido());
-					itensPedidos.setQuantidade(Integer.parseInt(modeloTableLivrosDaVenda.getValueAt(contador, 3).toString()));
+					itensPedidos.setQuantidade(Integer.parseInt(modeloTableLivrosDaVenda.getValueAt(contador, 2).toString()));
 					pedidoDAO.CadastrarItem(itensPedidos);
 				}				
 				

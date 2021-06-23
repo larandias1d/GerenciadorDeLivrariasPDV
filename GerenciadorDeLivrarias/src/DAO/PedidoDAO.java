@@ -172,13 +172,15 @@ public class PedidoDAO {
 		
 		Connection conexao = ModuloConexao.ModuloConexao();	
 		
-		String sql = "INSERT INTO  tb_item_pedido (id_pedido, id_livro, quantidade) VALUES(?,?,?)";
+		
 		
 		
 		try {
+			String sql = "INSERT INTO tb_item_pedido (id_pedido, id_livro, quantidade) VALUES(?,?,?)";
 			PreparedStatement stmt = conexao.prepareCall(sql);
 			stmt = conexao.prepareCall(sql);					
 			stmt.setInt(1, itensPedidos.getIdPedido());  
+			System.out.println(itensPedidos.getIdPedido());
 			stmt.setInt(2, itensPedidos.getIdLivro());
 			stmt.setInt(3, itensPedidos.getQuantidade());
             stmt.execute();
