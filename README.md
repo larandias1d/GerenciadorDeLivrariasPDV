@@ -10,15 +10,24 @@
 ## 2. Telas do sistema
 
 ### 2.1. Tela de login
+![](imgTelasGerenciadorDeLIvrariaPDV/telaLogin.png)
 
-### 2.2. Tela cadastro de clientes físicos e jurídicos
+### 2.2. Tela principal
+![](imgTelasGerenciadorDeLIvrariaPDV/telaPrincipal.png)
 
-### 2.3. Tela cadastro de funcionários
+### 2.3. Tela de funcionários
+![](imgTelasGerenciadorDeLIvrariaPDV/telaFuncionario.png)
+
+#### 2.3.1. Tela de cadastro de funcionários
+![](imgTelasGerenciadorDeLIvrariaPDV/telaCadastroFuncionario.png)
 
 ### 2.4. Tela cadastro de fornecedores
 
-### 2.5. Tela do caixa
+### 2.4. Tela cadastro de clientes física e jurídica
 
-### 2.6.
+### 2.6. Tela do caixa
+![](imgTelasGerenciadorDeLIvrariaPDV/telaCaixa.png)
 
 ### 2.7.
+
+### 2.8.
